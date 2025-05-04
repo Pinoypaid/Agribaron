@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chicken ROI Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="logo-container">
+    <img src="Pinoypaid.png" alt="Logo" class="logo">
+    <h1 class="site-title">AGRIBARON EARNINGS CALCULATOR</h1>
+  </div>
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('chicken')">🐔 Chicken</button>
+    <button class="tab-button" onclick="showTab('wheat')">🌾 Wheat</button>
+  </div>
+  
+  <div id="chickenTab" class="tab-content">
+    <h2>Chicken ROI Calculator</h2>
+    <label for="chickens">Enter number of chickens (max 6):</label>
+    <input type="number" id="chickens" min="1" max="6" placeholder="e.g., 3">
+    <button onclick="calculateChicken()">Calculate Chicken ROI</button>
+  
+    <div id="result" class="result" style="display: none;">
+      <p>💰 Cost: <strong><span id="chickenGoldCost">0</span></strong> Gold Coins / <strong>₱<span id="chickenPhpCost">0</span></strong> PHP</p>
+
+      <ul>
+        <li>Feathers: <span id="feathers"></span> → <span id="diamonds"></span> 💎 Diamonds</li>
+        <li>Eggs: <span id="eggs"></span> → <span id="eggValue"></span> 🪙 Gold Coins</li>
+      </ul>
+      <p>📅 Daily Income: <strong><span id="chickenDailyGold">0.00</span></strong> 🪙 Gold Coins /
+        ₱<strong><span id="chickenDailyPhp">0.00</span></strong></p>
+        
+      <p class="note">📝 Note: You need to sell your eggs so you can buy feeds again!</p>
+    </div>
+  
+    <div id="error" class="error" style="display: none;"></div>
+  </div>
+  
+  <div id="wheatTab" class="tab-content" style="display: none;">
+    <h2>Wheat ROI Calculator</h2>
+    <label for="wheatAmount">Enter number of wheat (max 30):</label>
+    <input type="number" id="wheatAmount" min="1" max="30" placeholder="e.g., 10">
+    <button onclick="calculateWheat()">Calculate Wheat ROI</button>
+    
+    <div id="wheatResult" class="result" style="display: none;">
+      <p>💰 Cost: <strong>FREE</strong></p>
+      <p>Wheat Straws: <span id="wheatStraw"></span> → <span id="wheatGold"></span> 🪙 Gold Coins</p>
+      <p>Ears of Wheat: <span id="earWheat"></span> → <span id="wheatDiamond"></span> 💎 Diamonds</p>
+      <p>📅 Daily Income: <strong><span id="wheatDailyGold">0.00</span></strong> 🪙 Gold Coins /
+        ₱<strong><span id="wheatDailyPhp">0.00</span></strong></p>
+        
+      <p class="note">💡 Tip: Wheat can only be obtained through Daily Sign-In or Redemption Code.</p>
+    </div>
+  
+    <div id="wheatError" class="error" style="display: none;"></div>
+  </div>
+  
+
+<footer>
+  <hr>
+  <p>📢 Join our Telegram group: 
+    <a href="https://t.me/AgriBaronPH" target="_blank">AGRIBARON</a>
+  </p>
+  <p>📬 Contact me: 
+    <a href="https://t.me/@PinoyPaid" target="_blank">@Pinoypaid</a>
+  </p>
+  <p>💡 Request by 
+    <a href="https://t.me/@Speedyphile" target="_blank">@Speedyphile</a>
+  </p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
